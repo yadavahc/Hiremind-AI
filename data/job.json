@@ -1,0 +1,85 @@
+{
+  "id": "job_senior_ai_engineer",
+  "title": "Senior AI Engineer — Founding Team",
+  "company": "Redrob AI",
+  "location": "Pune / Noida, India (Hybrid)",
+  "employmentType": "Full-time",
+  "experienceRequired": "5–9 years",
+  "rawText": "Job Description: Senior AI Engineer — Founding Team. Company: Redrob AI (Series A AI-native talent intelligence platform). Location: Pune/Noida, India (Hybrid). We're building a new AI Engineering org from scratch and need someone with deep technical depth in modern ML systems — embeddings, retrieval, ranking, LLMs, fine-tuning — combined with a scrappy product-engineering attitude. You'd own the intelligence layer of Redrob's product: the ranking, retrieval, and matching systems that decide what recruiters see. First 90 days: audit the current BM25 + rule-based scoring, ship a v2 ranking system using embeddings, hybrid retrieval, and LLM-based re-ranking, then set up evaluation infrastructure (offline benchmarks, online A/B testing, recruiter-feedback loops). Absolutely need: production experience with embeddings-based retrieval (sentence-transformers, BGE, E5, OpenAI embeddings), vector databases or hybrid search (Pinecone, Weaviate, Qdrant, Milvus, FAISS, Elasticsearch, OpenSearch), strong Python, and hands-on experience designing evaluation frameworks for ranking systems (NDCG, MRR, MAP, A/B testing). Nice to have: LLM fine-tuning (LoRA, QLoRA, PEFT), learning-to-rank, HR-tech/recruiting-tech exposure, distributed systems, open-source contributions. We explicitly do NOT want: title-chasers who switch companies every 1.5 years; framework enthusiasts whose work is mostly LangChain tutorials; people who have only ever worked at consulting firms (TCS, Infosys, Wipro, Accenture, Cognizant, Capgemini); pure computer-vision/speech/robotics specialists without NLP/IR depth; pure-research profiles with no production deployment. Ideal candidate: 6-8 years total, 4-5 in applied ML/AI at product companies, has shipped at least one end-to-end ranking/search/recommendation system at meaningful scale, located in or willing to relocate to Pune/Noida, and active in the job market.",
+  "parsed": {
+    "seniority": "Senior",
+    "minYears": 5,
+    "maxYears": 9,
+    "idealYears": 7,
+    "industry": ["AI / Talent Intelligence", "HR-tech", "Product"],
+    "education": "Bachelor's+ in CS or related (institution tier secondary to production track record)",
+    "requiredSkills": [
+      "embeddings",
+      "embeddings-based retrieval",
+      "sentence-transformers",
+      "BGE",
+      "E5",
+      "vector database",
+      "FAISS",
+      "Pinecone",
+      "Weaviate",
+      "Qdrant",
+      "Milvus",
+      "Elasticsearch",
+      "OpenSearch",
+      "hybrid search",
+      "BM25",
+      "ranking",
+      "learning to rank",
+      "Python",
+      "NDCG",
+      "MRR",
+      "MAP",
+      "A/B testing",
+      "evaluation frameworks"
+    ],
+    "preferredSkills": [
+      "LLM fine-tuning",
+      "LoRA",
+      "QLoRA",
+      "PEFT",
+      "XGBoost",
+      "recommendation systems",
+      "semantic search",
+      "cross-encoder",
+      "RAG",
+      "distributed systems",
+      "inference optimization",
+      "open source"
+    ],
+    "responsibilities": [
+      "Own the intelligence layer: ranking, retrieval, and matching",
+      "Ship a v2 hybrid ranking system (embeddings + LLM re-ranking)",
+      "Build evaluation infrastructure: offline benchmarks + online A/B testing",
+      "Drive long-term candidate–JD matching architecture at scale",
+      "Mentor and grow the AI engineering team from 4 to 12"
+    ],
+    "behavioralTraits": [
+      "Ships fast, product-minded over researcher-minded",
+      "Writes well; async-first communicator",
+      "Strong opinions on retrieval/evaluation, defensible with real systems",
+      "Stays 3+ years; not a title-chaser"
+    ],
+    "behavioralRequirements": {
+      "preferActive": true,
+      "preferResponsive": true,
+      "preferLowNotice": true,
+      "preferRelocateOrLocal": ["Pune", "Noida", "Hyderabad", "Mumbai", "Delhi", "NCR", "Bangalore", "Bengaluru"]
+    },
+    "antiSignals": [
+      "title-chaser (job-hops every ~1.5 years)",
+      "framework-enthusiast (LangChain-tutorial-only AI experience)",
+      "consulting-only career (TCS, Infosys, Wipro, Accenture, Cognizant, Capgemini)",
+      "computer-vision / speech / robotics specialist without NLP/IR depth",
+      "pure-research with no production deployment",
+      "keyword-stuffer (AI skills listed but non-engineering title)",
+      "dormant / unresponsive (stale last-active, low recruiter response rate)"
+    ],
+    "consultingFirms": ["TCS", "Tata Consultancy", "Infosys", "Wipro", "Accenture", "Cognizant", "Capgemini", "HCL", "Tech Mahindra", "Mindtree", "LTIMindtree"]
+  }
+}

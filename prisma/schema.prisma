@@ -1,0 +1,76 @@
+// HireMind AI — Prisma schema (SQLite)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// A parsed job description that candidates are ranked against.
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  company     String   @default("")
+  location    String   @default("")
+  rawText     String
+  /// JSON: { requiredSkills, preferredSkills, antiSignals, seniority, ... }
+  parsed      String   @default("{}")
+  isActive    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  rankings    Ranking[]
+}
+
+/// A candidate sourced from the Redrob pool.
+model Candidate {
+  id              String   @id // CAND_XXXXXXX
+  name            String
+  headline        String   @default("")
+  summary         String   @default("")
+  location        String   @default("")
+  country         String   @default("")
+  currentTitle    String   @default("")
+  currentCompany  String   @default("")
+  currentIndustry String   @default("")
+  companySize     String   @default("")
+  yearsExperience Float    @default(0)
+  isHoneypot      Boolean  @default(false)
+  /// Full candidate record as JSON (profile, career_history, education, skills, redrob_signals)
+  raw             String
+  createdAt       DateTime @default(now())
+  rankings        Ranking[]
+}
+
+/// A computed ranking of a candidate against a job.
+model Ranking {
+  id              String   @id @default(cuid())
+  jobId           String
+  candidateId     String
+  rank            Int
+  score           Float
+  /// JSON: per-component scores (semantic, skills, experience, education, stability, culture, signals...)
+  components      String   @default("{}")
+  /// JSON: engineered feature vector
+  features        String   @default("{}")
+  /// JSON: { strengths, weaknesses, recommendation, summary, whyAboveOthers }
+  explanation     String   @default("{}")
+  reasoning       String   @default("")
+  confidence      Float    @default(0)
+  createdAt       DateTime @default(now())
+
+  job         Job        @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidate   Candidate  @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, candidateId])
+  @@index([jobId, rank])
+}
+
+/// Persisted AI Recruiter chat turns.
+model ChatMessage {
+  id        String   @id @default(cuid())
+  role      String   // "user" | "assistant"
+  content   String
+  createdAt DateTime @default(now())
+}

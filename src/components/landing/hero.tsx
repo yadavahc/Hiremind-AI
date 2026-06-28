@@ -20,7 +20,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6">
+    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pb-16 pt-28 sm:pt-24">
       {/* Three.js background */}
       <div className="absolute inset-0 -z-10">
         <HeroCanvas />
@@ -32,20 +32,20 @@ export function Hero() {
 
       <div className="flex max-w-4xl flex-col items-center text-center">
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
-          <Link href="/dashboard" className="group mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs text-muted-foreground backdrop-blur transition-colors hover:border-white/20 hover:text-foreground">
-            <Sparkles className="size-3.5 text-silver" />
+          <Link href="/dashboard" className="group mb-7 inline-flex max-w-[92vw] flex-wrap items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-center text-[11px] text-muted-foreground backdrop-blur transition-colors hover:border-white/20 hover:text-foreground sm:text-xs">
+            <Sparkles className="size-3.5 shrink-0 text-silver" />
             Built on Gemini 2.5 · BGE embeddings · hybrid retrieval
-            <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="size-3 shrink-0 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </motion.div>
 
-        <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="show" className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
+        <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="show" className="text-balance text-[2.6rem] font-semibold leading-[1.06] tracking-tight sm:text-6xl md:text-7xl">
           <span className="silver-text silver-glow">The Future</span>
           <br />
           <span className="text-foreground">of AI Hiring</span>
         </motion.h1>
 
-        <motion.p custom={2} variants={fadeUp} initial="hidden" animate="show" className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted-foreground">
+        <motion.p custom={2} variants={fadeUp} initial="hidden" animate="show" className="mt-5 max-w-2xl text-balance text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
           HireMind reads a job description the way your best recruiter would — understanding
           intent, not keywords. It ranks every candidate, explains each decision, and hands you a
           shortlist you can actually trust.
@@ -65,7 +65,7 @@ export function Hero() {
           </Button>
         </motion.div>
 
-        <motion.div custom={4} variants={fadeUp} initial="hidden" animate="show" className="mt-12 flex items-center gap-6 text-xs text-muted-foreground">
+        <motion.div custom={4} variants={fadeUp} initial="hidden" animate="show" className="mt-12 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground sm:gap-6">
           <Stat value="100K" label="Candidate pool" />
           <div className="h-8 w-px bg-white/10" />
           <Stat value="< 5 min" label="CPU-only ranking" />

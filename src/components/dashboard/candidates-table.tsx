@@ -74,7 +74,7 @@ export function CandidatesTable() {
           <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search name, title, skill, ID…" className="pl-9" />
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/[0.03] p-1">
+          <div className="flex flex-wrap items-center gap-1 rounded-lg border border-white/10 bg-white/[0.03] p-1">
             <Filter className="ml-1.5 size-3.5 text-muted-foreground" />
             {RECS.map((r) => (
               <button key={r} onClick={() => setRec(r)} className={cn(
@@ -134,6 +134,12 @@ export function CandidatesTable() {
                         {row.isHoneypot && <Badge variant="danger" className="px-1.5 py-0 text-[10px]">honeypot</Badge>}
                       </div>
                       <p className="truncate text-xs text-muted-foreground">{row.title} · {row.location}</p>
+                      {/* Mobile-only: surface score, verdict, experience (hidden on md+) */}
+                      <div className="mt-1.5 flex items-center gap-2 md:hidden">
+                        <span className={cn("font-mono text-xs font-semibold", scoreColor(row.score))}>{pct(row.score, 1)}</span>
+                        <Badge variant="outline" className={cn("px-1.5 py-0 text-[10px]", rec.className)}>{rec.label}</Badge>
+                        <span className="text-[11px] text-muted-foreground">{row.years}y</span>
+                      </div>
                     </div>
                   </div>
                   <div className="hidden text-sm md:block">{row.years}<span className="text-muted-foreground"> yrs</span></div>

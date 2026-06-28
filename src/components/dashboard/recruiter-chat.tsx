@@ -48,7 +48,7 @@ export function RecruiterChat() {
   };
 
   return (
-    <div className="flex h-[calc(100vh-9rem)] flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-card">
+    <div className="flex h-[calc(100dvh-13rem)] flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-card lg:h-[calc(100vh-9rem)]">
       {/* messages */}
       <div ref={scrollRef} className="flex-1 space-y-5 overflow-y-auto p-5 lg:p-6">
         {messages.length === 0 && (

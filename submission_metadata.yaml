@@ -1,0 +1,76 @@
+# Redrob Hackathon — Submission Metadata
+# (Fill in team identity / repo / sandbox before submitting.)
+
+team_name: "YCoding"
+
+primary_contact:
+  name: "Yadava H C"
+  email: "yadavahc333@gmail.com"
+  phone: "+91-8904030441"
+
+team_members:
+  - name: "Yadava H C"
+    email: "yadavahc333@gmail.com"
+    role: "ML / Full-Stack Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/yadavahc/Hiremind-AI"
+sandbox_link: "https://huggingface.co/spaces/yadavahc/hiremind-ranker"
+reproduce_command: "python scripts/rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local Windows / Linux box"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11+"
+  os: "Windows 11 / Ubuntu 22.04"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration (transparency only — honest declaration is not penalized)
+# ============================================================================
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude (Claude Code) for architecture discussion, code review, and to
+  accelerate the Next.js front-end and Python ranker scaffolding. All ranking
+  logic — concept-evidence feature engineering, behavioral modifiers, trap and
+  honeypot detection, and the calibrated composite — is the team's original
+  design. NO candidate data is sent to any LLM during ranking; the ranking step
+  is fully offline, CPU-only, and deterministic.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  Hybrid, trap-aware ranker that reads profiles, not keywords. Lexical BM25 +
+  TF-IDF cosine (a dense-retrieval proxy; optional BGE + cross-encoder re-rank
+  on the prefiltered shortlist) are fused with a concept-evidence layer that
+  credits a competency far more when it appears in CAREER HISTORY than when it
+  is merely a skill tag. Twenty-plus engineered features (required-skill
+  coverage, experience-band fit, career stability, product-vs-services, culture
+  fit) feed a calibrated composite. A behavioral-availability multiplier
+  down-weights dormant / unresponsive candidates, and explicit penalties sink
+  keyword-stuffers, consulting-only careers, off-target CV/speech/robotics
+  specialists, and ~80 honeypots (caught via impossible tenure/skill-duration
+  checks). Runtime ~71s for 100K candidates on CPU, stdlib-only. Every row
+  carries grounded, varied, honest reasoning.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

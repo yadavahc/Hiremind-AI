@@ -1,0 +1,10 @@
+# HireMind AI — Python ranker dependencies
+# The core ranker (scripts/rank.py) runs on the STANDARD LIBRARY ONLY — no
+# third-party packages required to reproduce submission.csv within the
+# 5-minute / 16 GB / CPU-only / no-network constraints.
+#
+# The following are OPTIONAL and only used when you pass --use-models to enable
+# BGE dense re-ranking + cross-encoder on the prefiltered shortlist:
+sentence-transformers>=3.0.0
+torch>=2.2.0          # CPU build is sufficient
+numpy>=1.26.0

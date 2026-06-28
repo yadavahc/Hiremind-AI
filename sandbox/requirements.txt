@@ -1,0 +1,3 @@
+# No extra dependencies — the ranker is standard-library only.
+# Gradio is provided by the Space's `sdk: gradio` (HF installs a version
+# compatible with its own base image, avoiding huggingface_hub conflicts).

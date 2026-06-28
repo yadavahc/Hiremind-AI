@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Upload, Cpu, ListChecks, Download, Quote, Star } from "lucide-react";
+import { Upload, Cpu, ListChecks, Download } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { AnimatedCounter } from "@/components/shared/animated-counter";
 import { Logo } from "@/components/shared/logo";
@@ -65,47 +65,6 @@ export function Metrics() {
                 <AnimatedCounter value={m.value} decimals={m.decimals} suffix={m.suffix} />
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{m.label}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Testimonials
-// ---------------------------------------------------------------------------
-const REVIEWS = [
-  { quote: "It surfaced a Search Engineer my keyword filters buried at page 12. That's the hire we made.", name: "Priya Nair", role: "Head of Talent, fintech scale-up" },
-  { quote: "The honeypot filtering alone is worth it. We stopped wasting interview slots on too-good-to-be-true profiles.", name: "Marcus Lee", role: "Technical Recruiter" },
-  { quote: "Finally a ranker that tells me WHY. The reasoning column reads like a sharp recruiter wrote it.", name: "Anjali Desai", role: "VP Engineering" },
-  { quote: "We replaced a brittle rules engine with HireMind in a week. Recruiter engagement is up across the board.", name: "Tom Bradley", role: "People Ops Lead" },
-];
-
-export function Testimonials() {
-  return (
-    <section className="relative mx-auto max-w-6xl px-6 py-28">
-      <Reveal className="mb-14 text-center">
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-silver-muted">Loved by recruiters</p>
-        <h2 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">Trusted where hiring actually happens</h2>
-      </Reveal>
-      <div className="grid gap-4 md:grid-cols-2">
-        {REVIEWS.map((r, i) => (
-          <Reveal key={r.name} delay={i * 0.07}>
-            <div className="h-full rounded-2xl border border-white/[0.08] bg-card p-7">
-              <div className="mb-4 flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="size-3.5 fill-silver text-silver" />)}
-              </div>
-              <Quote className="mb-3 size-6 text-white/15" />
-              <p className="text-[15px] leading-relaxed text-foreground/90">{r.quote}</p>
-              <div className="mt-5 flex items-center gap-3">
-                <div className="size-9 rounded-full bg-gradient-to-br from-zinc-200 to-zinc-500" />
-                <div>
-                  <p className="text-sm font-medium">{r.name}</p>
-                  <p className="text-xs text-muted-foreground">{r.role}</p>
-                </div>
-              </div>
             </div>
           </Reveal>
         ))}
